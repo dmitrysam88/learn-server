@@ -1,10 +1,9 @@
-function parseBody(req) {
-  return new Promise((resolve, reject) => {
-    const body = [];
-    req.on('error', (err) => reject(err));
-    req.on('data', (chunk) => body.push(chunk));
-    req.on('end', () => resolve(Buffer.concat(body).toString()));
-  });
+async function parseBody(req) {
+  const body = [];
+  for await (chunk of req) {
+    body.push(chunk)
+  }
+  return Buffer.concat(body).toString();
 }
 
 async function parseJsonBody(req) {
