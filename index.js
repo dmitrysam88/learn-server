@@ -1,6 +1,8 @@
 const http = require('http');
+const { getConfig } = require('./config');
 const methods = require('./methods');
 const { parseJsonBody } = require('./utils');
+const path = require('path');
 
 const server = http.createServer(async (req, res) => {
   const method = methods[req.method.toLowerCase()];
@@ -18,4 +20,8 @@ const server = http.createServer(async (req, res) => {
   res.end(JSON.stringify(data));
 });
 
-server.listen(3000);
+server.listen(getConfig().port, () => {
+  console.log(`Data base is ${path.join(__dirname, getConfig().dbFilename)}`);
+  console.log('Server is working');
+  console.log(`http://localhost:${getConfig().port}/`);
+});
