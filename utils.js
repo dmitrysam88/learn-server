@@ -15,7 +15,18 @@ async function parseJsonBody(req) {
   }
 }
 
+function isNumeric(value) {
+  return /^-?\d+$/.test(value);
+}
+
+function splitPath(path) {
+  const normalizedPath = path.replace(/[\[\].\\]/g, '/');
+  return normalizedPath.split('/').filter(Boolean);
+}
+
 module.exports = {
   parseBody,
   parseJsonBody,
+  isNumeric,
+  splitPath,
 };

@@ -8,8 +8,5 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "node-json-db": "^2.1.4"
-  }
+  "license": "ISC"
 }

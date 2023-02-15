@@ -1,11 +1,11 @@
-const db = require('./db');
+const db = require('./db/index');
 
 async function get(url, body) {
   const dataExists = await db.exists(url);
 
   if (!dataExists) return `Data ${url} is not exists in database`;
 
-  return db.getData(url);
+  return db.get(url);
 }
 
 async function post(url, body) {
