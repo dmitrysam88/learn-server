@@ -1,11 +1,14 @@
 # Learn server
 
+## Description
 It is a test server for developers to learn how to send http request and get result.
 
+## Run
 To run server you just need to clone net and run in terminal `npm start`.
 
 It will run server on port `3000` and with `myDataBase.json` file as data base.
 
+## Configure
 But you can configured port and data base file.
 
 - port can be configured by one of word `-p` `-port` `p` `port`
