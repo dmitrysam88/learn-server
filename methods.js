@@ -29,7 +29,7 @@ async function patch(url, body) {
 
   if (!dataExists) return `Data ${url} is not exists in database`;
 
-  const oldData = await db.getData(url);
+  const oldData = await db.get(url);
   const newData = { ...oldData, ...body};
 
   await db.push(url, newData);
