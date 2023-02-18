@@ -8,7 +8,7 @@ const server = http.createServer(async (req, res) => {
   const method = methods[req.method.toLowerCase()];
 
   if (typeof method !== 'function') {
-    res.writeHead(400)
+    res.writeHead(400);
     res.end('Wrong method');
   }
 
