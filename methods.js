@@ -47,4 +47,8 @@ async function del(url, body) {
   return url;
 }
 
-module.exports = { get, post, put, patch, delete: del };
+async function options(url, body) {
+  return null;
+}
+
+module.exports = { options, get, post, put, patch, delete: del };
